@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — AI Paste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --color-bg: #f7f6f2;
+      --color-surface: #ffffff;
+      --color-surface-2: #f9f8f5;
+      --color-surface-offset: #f0eeea;
+      --color-divider: #dcd9d5;
+      --color-border: #e2dfda;
+      --color-text: #1a1917;
+      --color-text-muted: #6b6a67;
+      --color-text-faint: #a8a7a3;
+      --color-text-inverse: #f9f8f4;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #e0eeec;
+      --color-accent: #4f98a3;
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem;
+      --radius-xl: 1rem; --radius-2xl: 1.5rem; --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.06);
+      --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.08);
+      --shadow-lg: 0 12px 32px oklch(0.2 0.01 80 / 0.12);
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #171614;
+      --color-surface: #1e1d1b;
+      --color-surface-2: #252422;
+      --color-surface-offset: #2a2927;
+      --color-divider: #313030;
+      --color-border: #353432;
+      --color-text: #d4d3d1;
+      --color-text-muted: #888784;
+      --color-text-faint: #555451;
+      --color-text-inverse: #1a1917;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #63b3bf;
+      --color-primary-highlight: #1e3035;
+      --color-accent: #4f98a3;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25);
+      --shadow-md: 0 4px 12px oklch(0 0 0 / 0.35);
+      --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.5);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-16);
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.65;
+    }
+    img { display: block; max-width: 100%; }
+    p, li { text-wrap: pretty; max-width: 72ch; }
+    h1,h2,h3 { text-wrap: balance; line-height: 1.2; }
+    a, button { transition: color var(--transition), background var(--transition), border-color var(--transition); }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+    /* HEADER NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: color-mix(in oklch, var(--color-bg) 85%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      padding: var(--space-4) var(--space-6);
+    }
+    .nav-inner {
+      max-width: 840px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      text-decoration: none;
+      color: var(--color-text);
+    }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-lg);
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-text {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+    }
+    .logo-sub {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      font-weight: 400;
+    }
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      background: var(--color-surface);
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .theme-toggle:hover {
+      background: var(--color-surface-offset);
+      color: var(--color-text);
+    }
+
+    /* HERO */
+    .hero {
+      padding: clamp(var(--space-16), 8vw, var(--space-20)) var(--space-6) var(--space-12);
+      max-width: 840px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-1) var(--space-3);
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+      border-radius: var(--radius-full);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-5);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-4);
+      letter-spacing: -0.02em;
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+    }
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+    }
+    .hero-meta svg { flex-shrink: 0; }
+
+    /* LAYOUT */
+    .layout {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: var(--space-12) var(--space-6);
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: var(--space-16);
+      align-items: start;
+    }
+
+    /* MAIN CONTENT */
+    .policy-body { min-width: 0; }
+    .section {
+      margin-bottom: var(--space-10);
+      padding-bottom: var(--space-10);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .section:last-child { border-bottom: none; margin-bottom: 0; }
+    .section h2 {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: var(--space-4);
+      letter-spacing: -0.01em;
+    }
+    .section p {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.75;
+    }
+    .section p + p { margin-top: var(--space-3); }
+
+    /* INFO CARD */
+    .info-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5);
+      margin-bottom: var(--space-6);
+      display: flex;
+      gap: var(--space-4);
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+    }
+    .info-card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-lg);
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .info-card-text p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      max-width: none;
+    }
+    .info-card-text strong {
+      display: block;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: var(--space-1);
+    }
+
+    /* CONTACT BLOCK */
+    .contact-block {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #0c4e54 100%);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      color: var(--color-text-inverse);
+    }
+    .contact-block h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: var(--space-3);
+    }
+    .contact-block p {
+      color: rgba(255,255,255,0.75);
+      margin-bottom: var(--space-5);
+      max-width: none;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius-full);
+      color: #fff;
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .contact-link:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    /* SIDEBAR TOC */
+    .sidebar {
+      position: sticky;
+      top: calc(var(--space-16) + var(--space-4));
+    }
+    .toc {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5);
+      box-shadow: var(--shadow-sm);
+    }
+    .toc-title {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: var(--space-4);
+    }
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+    .toc-list a {
+      display: block;
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      text-decoration: none;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      transition: background var(--transition), color var(--transition);
+    }
+    .toc-list a:hover, .toc-list a.active {
+      background: var(--color-surface-offset);
+      color: var(--color-primary);
+    }
+    .toc-divider {
+      height: 1px;
+      background: var(--color-divider);
+      margin: var(--space-4) 0;
+    }
+    .toc-app-badge {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3);
+      background: var(--color-surface-offset);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+    }
+    .toc-app-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-md);
+      background: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .toc-app-name {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .toc-app-pkg {
+      font-size: 10px;
+      color: var(--color-text-faint);
+      margin-top: 1px;
+      font-family: monospace;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      border-top: 1px solid var(--color-divider);
+      padding: var(--space-8) var(--space-6);
+      max-width: 840px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    .footer-copy {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+    }
+    .footer-links {
+      display: flex;
+      gap: var(--space-6);
+    }
+    .footer-links a {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--color-primary); }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        padding: var(--space-8) var(--space-4);
+      }
+      .sidebar { position: static; }
+      .hero { padding: var(--space-10) var(--space-4) var(--space-8); }
+      .site-footer { padding: var(--space-6) var(--space-4); }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="9" y="2" width="6" height="4" rx="1" fill="white" opacity="0.9"/>
+          <rect x="4" y="8" width="16" height="14" rx="2" fill="white" opacity="0.25" stroke="white" stroke-width="1.5"/>
+          <path d="M9 13h6M9 16h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">Nexa AI Labs</div>
+        <div class="logo-sub">Privacy Policy — AI Paste</div>
+      </div>
+    </a>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero reveal">
+  <div class="hero-badge">
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="5"/></svg>
+    Legal Document
+  </div>
+  <h1>Privacy Policy</h1>
+  <div class="hero-meta">
+    <span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Effective April 28, 2026
+    </span>
+    <span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      India
+    </span>
+    <span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Nexa AI Labs
+    </span>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+  <main class="policy-body" id="main">
+
+    <!-- Overview -->
+    <div class="section reveal" id="overview">
+      <div class="info-card">
+        <div class="info-card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="info-card-text">
+          <strong>Applies to</strong>
+          <p>This Privacy Policy applies to <strong>AI Paste</strong> (package: <code>com.aipaste.app</code>), developed by <strong>Nexa AI Labs</strong>. By using the app you agree to this policy.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accessibility Service -->
+    <div class="section reveal" id="accessibility">
+      <h2>Accessibility Service</h2>
+      <p>AI Paste uses Android's Accessibility Service solely to access the system <code>takeScreenshot()</code> API, introduced in Android 11 (API 30). This is the only API that allows one-tap, full-screen capture without triggering the system screenshot UI or requiring a MediaProjection confirmation dialog on every use.</p>
+      <p>The Accessibility Service does <strong>not</strong> read, monitor, or interact with the content of any app on your screen. It does not log keystrokes, track navigation, or observe any user actions. <code>onAccessibilityEvent</code> is implemented as a no-op — no events are ever processed.</p>
+      <p>This app is not designed for users with disabilities. The Accessibility API is used exclusively as a screenshot mechanism.</p>
+    </div>
+
+    <!-- Screenshots & Local Data -->
+    <div class="section reveal" id="screenshots">
+      <h2>Screenshots &amp; Local Storage</h2>
+      <p>When you capture a screenshot, the image is saved to your device's internal cache directory (<code>cacheDir/screenshot_latest.png</code>). This file is <strong>overwritten</strong> on every new capture — only one screenshot is ever stored at a time.</p>
+      <p>The screenshot is then copied to your clipboard as a local <code>content://</code> URI so you can paste it into AI apps. This is a fully local, on-device operation.</p>
+      <p><strong>Your screenshots are never uploaded, transmitted, or shared with any server, including ours.</strong> No screenshot data ever leaves your device.</p>
+    </div>
+
+    <!-- Data Collection -->
+    <div class="section reveal" id="collection">
+      <h2>Information We Collect</h2>
+      <p>We do not collect, store, or have access to any personally identifiable information. We do not operate any backend servers that receive data from this app.</p>
+      <p>The app does not require you to create an account, sign in, or provide any personal details to use it.</p>
+    </div>
+
+    <!-- Advertising -->
+    <div class="section reveal" id="advertising">
+      <h2>Advertising (Google AdMob)</h2>
+      <p>AI Paste displays ads served by <strong>Google AdMob</strong>. AdMob may collect certain device identifiers — including the Android Advertising ID — and usage data to serve relevant ads. This data is governed by <a href="https://policies.google.com/privacy" style="color: var(--color-primary);">Google's Privacy Policy</a>.</p>
+      <p>You can opt out of personalised ads at any time through your device's Google settings under <em>Ads → Delete advertising ID</em> or by disabling ad personalisation.</p>
+    </div>
+
+    <!-- Third-Party Services -->
+    <div class="section reveal" id="third-party">
+      <h2>Third-Party Services</h2>
+      <p>The app integrates the following third-party SDKs, each subject to their own privacy policies:</p>
+      <p><strong>Google Play Services</strong> — provides core Android platform services.<br>
+      <strong>Google AdMob</strong> — provides in-app advertising.</p>
+      <p>We do not integrate any analytics, crash-reporting, or tracking SDKs beyond those listed above.</p>
+    </div>
+
+    <!-- Security -->
+    <div class="section reveal" id="security">
+      <h2>Data Security</h2>
+      <p>Because all screenshot data remains on your device, the security of your screenshots is governed by your device's own security model (lock screen, app sandboxing, encrypted storage). We do not transmit your data and therefore cannot be responsible for its interception in transit.</p>
+      <p>We do take reasonable precautions to ensure the app itself does not introduce vulnerabilities that could expose clipboard or cached data to unauthorised apps.</p>
+    </div>
+
+    <!-- Children -->
+    <div class="section reveal" id="children">
+      <h2>Children's Privacy</h2>
+      <p>AI Paste is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has used this app and you have concerns, please contact us and we will address them promptly.</p>
+    </div>
+
+    <!-- Changes -->
+    <div class="section reveal" id="changes">
+      <h2>Policy Updates</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in the app, applicable law, or our practices. When we do, we will update the effective date at the top of this page.</p>
+      <p>Continued use of the app after any changes constitutes your acceptance of the updated policy. We encourage you to review this page periodically.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="section reveal" id="contact" style="border-bottom:none; padding-bottom: 0;">
+      <div class="contact-block">
+        <h2>Questions?</h2>
+        <p>If you have any questions about this Privacy Policy or how AI Paste handles your data, please reach out — we're happy to help.</p>
+        <a href="mailto:support.nexalabs@gmail.com" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          support.nexalabs@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <nav class="toc" aria-label="Table of contents">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list" role="list">
+        <li><a href="#accessibility">Accessibility Service</a></li>
+        <li><a href="#screenshots">Screenshots &amp; Storage</a></li>
+        <li><a href="#collection">Information We Collect</a></li>
+        <li><a href="#advertising">Advertising</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#security">Data Security</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#changes">Policy Updates</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="toc-divider"></div>
+      <div class="toc-app-badge">
+        <div class="toc-app-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
+            <rect x="9" y="2" width="6" height="4" rx="1"/>
+            <rect x="4" y="8" width="16" height="14" rx="2"/>
+            <path d="M9 13h6M9 16h4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="toc-app-name">AI Paste</div>
+          <div class="toc-app-pkg">com.aipaste.app</div>
+        </div>
+      </div>
+    </nav>
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-copy">© 2026 Nexa AI Labs. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="mailto:support.nexalabs@gmail.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  (function(){
+    const t = document.querySelector('[data-theme-toggle]');
+    const r = document.documentElement;
+    let d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    r.setAttribute('data-theme', d);
+    function updateIcon() {
+      if (!t) return;
+      t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
+      t.innerHTML = d === 'dark'
+        ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+    updateIcon();
+    if (t) t.addEventListener('click', () => { d = d === 'dark' ? 'light' : 'dark'; r.setAttribute('data-theme', d); updateIcon(); });
+  })();
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // TOC active link highlight
+  const sections = document.querySelectorAll('.section[id]');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+  const tocObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector('.toc-list a[href="#' + e.target.id + '"]');
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+  sections.forEach(s => tocObserver.observe(s));
+</script>
+
+</body>
+</html>
